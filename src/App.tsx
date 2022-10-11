@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import List from './components/list/List';
+import AddItem from './components/AddItem/AddItem';
+import { useTodoList } from './useTodoList';
 
-function App() {
+
+const App = () => {
+  const {loading, error, addItem, items, toggleCompleted, deleteItem} = useTodoList();
+
+
+  if(loading) {
+    return (
+      <h1>...</h1>
+    )
+  }
+
+  if(error) {
+    return (
+      <>
+        <h1>Errore server:</h1>
+        <h3>{error?.message}</h3>
+      </>
+    )
+  }
+
+
+  if(!items) {
+    return <ul></ul>
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <AddItem addItem={addItem}/> 
+      <List items={items} toggleCompleted={toggleCompleted} deleteItem={deleteItem.mutate}/>
+      {deleteItem.isSuccess && <pre>cancellato elemento {deleteItem.data}</pre>}
+    </>
+    );
+
+
+} 
 
 export default App;

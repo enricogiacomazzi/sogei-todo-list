@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "label": "fare la spesa",
+      "completed": true,
+      "id": 1
+    },
+    {
+      "label": "comprare latte",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "label": "portare a spasso billy",
+      "completed": true,
+      "id": 3
+    },
+    {
+      "label": "comprare bagnoschiuma",
+      "completed": true,
+      "id": 6
+    },
+    {
+      "label": "andare al mare",
+      "completed": false,
+      "id": 9
+    }
+  ]
+}

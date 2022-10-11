@@ -30,8 +30,8 @@ const App = () => {
 
   return (
     <>
-      <AddItem addItem={addItem}/> 
-      <List items={items} toggleCompleted={toggleCompleted} deleteItem={deleteItem.mutate}/>
+      <AddItem addItem={addItem.mutate}/> 
+      <List items={items} toggleCompleted={toggleCompleted.mutate} deleteItem={deleteItem.mutate}/>
       {deleteItem.isSuccess && <pre>cancellato elemento {deleteItem.data}</pre>}
     </>
     );

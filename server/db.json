@@ -7,23 +7,23 @@
     },
     {
       "label": "comprare latte",
-      "completed": false,
+      "completed": true,
       "id": 2
     },
     {
-      "label": "portare a spasso billy",
-      "completed": true,
-      "id": 3
-    },
-    {
       "label": "comprare bagnoschiuma",
-      "completed": true,
+      "completed": false,
       "id": 6
     },
     {
       "label": "andare al mare",
       "completed": false,
       "id": 9
+    },
+    {
+      "label": "aperitivo",
+      "completed": true,
+      "id": 10
     }
   ]
 }

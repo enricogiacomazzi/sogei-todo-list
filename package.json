@@ -20,10 +20,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm:start:react\" \"npm:start:server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "start:react": "react-scripts start",
     "start:server": "json-server -w -p 3001 server/db.json"
   },
   "eslintConfig": {
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^7.4.0",
     "json-server": "^0.17.0"
   }
 }
